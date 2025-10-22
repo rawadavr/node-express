@@ -23,3 +23,9 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+# using express-generator to put default scaffolding up
+npx express-generator -> runs at current dir as route and puts together the scaffolding
+npm install -> installs dependencies and generates package files
+DEBUG=myapp:* npm start -> starts app up, can still use http://localhost:3000/ to route to default base entry point
+
