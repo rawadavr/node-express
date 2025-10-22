@@ -36,3 +36,7 @@ DEBUG=myapp:* npm start -> starts app up, can still use http://localhost:3000/ t
 # example: app.put('/user', (request, response) => { response.send('Got a PUT request at /user') })
 # example: app.delete('/user', (request, response) => { response.send('Got a DELETE request at /user') })
 
+# Serving Static Files publicly
+# express.static(root, [options])
+# example: app.use(express.static('public')) -> can use for multiple static paths, can can apply static prefix too
+# example: app.use('/static', express.static('public')) -> maps any <route>:<port>/static/<path to asset> as in place of serving everything publicly
