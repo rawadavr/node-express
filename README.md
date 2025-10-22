@@ -29,3 +29,10 @@ npx express-generator -> runs at current dir as route and puts together the scaf
 npm install -> installs dependencies and generates package files
 DEBUG=myapp:* npm start -> starts app up, can still use http://localhost:3000/ to route to default base entry point
 
+# Routing description
+# <instance of express in script>.<http request method>(<path on server>, <handler function for when executed on the server path>)
+# example: app.get('/', (request, response) => { response.send('Hello World') })
+# example: app.post('/', (request, response) => { response.send('Got a POST request') })
+# example: app.put('/user', (request, response) => { response.send('Got a PUT request at /user') })
+# example: app.delete('/user', (request, response) => { response.send('Got a DELETE request at /user') })
+
