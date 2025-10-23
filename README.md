@@ -40,3 +40,8 @@ DEBUG=myapp:* npm start -> starts app up, can still use http://localhost:3000/ t
 # express.static(root, [options])
 # example: app.use(express.static('public')) -> can use for multiple static paths, can can apply static prefix too
 # example: app.use('/static', express.static('public')) -> maps any <route>:<port>/static/<path to asset> as in place of serving everything publicly
+
+# Docker implementation
+# set up basic Dockerfile and .dockerignore
+# build docker image locally: docker build -t <name of image> <path to Dockerfile>, ie docker build -t my-node-app .
+# run docker container: docker run -p <host port>:<container port> --name <container name> <image name>, ie docker run -p 4000:3000 --name my-node-container my-node-app
