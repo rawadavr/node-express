@@ -44,4 +44,4 @@ DEBUG=myapp:* npm start -> starts app up, can still use http://localhost:3000/ t
 # Docker implementation
 # set up basic Dockerfile and .dockerignore
 # build docker image locally: docker build -t <name of image> <path to Dockerfile>, ie docker build -t my-node-app .
-# run docker container: docker run -p <host port>:<container port> --name <container name> <image name>, ie docker run -p 4000:3000 --name my-node-container my-node-app
+# run docker container: docker run -p <host port>:<container port> --name <container name> <image name>, ie docker run -p 4000:3000 --network <network name> --name my-node-container my-node-app
