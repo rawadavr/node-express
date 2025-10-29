@@ -40,34 +40,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//var pg = require('pg');
-//const { Client } = pg;
-
-//async function connectToPostgres() {
-//  const client = new Client({
-//    user: 'postgres',
-//    host: 'postgres-database-db-1', // or your database host
-//    database: 'my_postgres',
-//    password: 'mysecretpassword',
-//    port: 5432, // default PostgreSQL port
-//  });
-
-//  try {
-//    await client.connect();
-//    console.log('Connected to PostgreSQL database!');
-
-    // Example query
-//    const res = await client.query('SELECT NOW()');
-//    console.log('Current time from database:', res.rows[0].now);
-
-//  } catch (err) {
-//    console.error('Error connecting to PostgreSQL:', err);
-//  } finally {
-//    await client.end(); // Close the connection
-//    console.log('Disconnected from PostgreSQL.');
-//  }
-//}
-
-//connectToPostgres();
-
 module.exports = app;
