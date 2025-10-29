@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -38,34 +40,34 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var pg = require('pg');
-const { Client } = pg;
+//var pg = require('pg');
+//const { Client } = pg;
 
-async function connectToPostgres() {
-  const client = new Client({
-    user: 'postgres',
-    host: 'postgres-database-db-1', // or your database host
-    database: 'my_postgres',
-    password: 'mysecretpassword',
-    port: 5432, // default PostgreSQL port
-  });
+//async function connectToPostgres() {
+//  const client = new Client({
+//    user: 'postgres',
+//    host: 'postgres-database-db-1', // or your database host
+//    database: 'my_postgres',
+//    password: 'mysecretpassword',
+//    port: 5432, // default PostgreSQL port
+//  });
 
-  try {
-    await client.connect();
-    console.log('Connected to PostgreSQL database!');
+//  try {
+//    await client.connect();
+//    console.log('Connected to PostgreSQL database!');
 
     // Example query
-    const res = await client.query('SELECT NOW()');
-    console.log('Current time from database:', res.rows[0].now);
+//    const res = await client.query('SELECT NOW()');
+//    console.log('Current time from database:', res.rows[0].now);
 
-  } catch (err) {
-    console.error('Error connecting to PostgreSQL:', err);
-  } finally {
-    await client.end(); // Close the connection
-    console.log('Disconnected from PostgreSQL.');
-  }
-}
+//  } catch (err) {
+//    console.error('Error connecting to PostgreSQL:', err);
+//  } finally {
+//    await client.end(); // Close the connection
+//    console.log('Disconnected from PostgreSQL.');
+//  }
+//}
 
-connectToPostgres();
+//connectToPostgres();
 
 module.exports = app;
